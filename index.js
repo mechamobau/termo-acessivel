@@ -31,25 +31,25 @@ const describeLine = (line, num, chopAggression) => {
   const hasPerfect = decoded.perfectIndexes.length > 0;
   const hasMisplaced = decoded.misplacedIndexes.length > 0;
 
-  const perfectWord = chopAggression >= 8 ? 'yes' : 'perfect';
+  const perfectWord = chopAggression >= 8 ? 'sim' : 'perfeito';
   const perfect = hasPerfect ? `${describe(decoded.perfectIndexes)} ${perfectWord}` : null;
 
   const misplacedList = describe(decoded.misplacedIndexes);
 
-  const wrongPlace = chopAggression >= 6 ? chopAggression >= 7 ? 'no' : 'wrong' : 'in the wrong place';
-  const correctBut = chopAggression >= 3 ? `${misplacedList} ${wrongPlace}` : `${misplacedList} correct but ${wrongPlace}`;
-  const perfectBut = chopAggression >= 2 ? `. ${misplacedList} ${wrongPlace}` : `, but ${misplacedList} ${wrongPlace}`
+  const wrongPlace = chopAggression >= 6 ? chopAggression >= 7 ? 'não' : 'errado' : 'no lugar errado';
+  const correctBut = chopAggression >= 3 ? `${misplacedList} ${wrongPlace}` : `${misplacedList} correto mas ${wrongPlace}`;
+  const perfectBut = chopAggression >= 2 ? `. ${misplacedList} ${wrongPlace}` : `, mas ${misplacedList} ${wrongPlace}`
 
   const misplaced = hasPerfect ? perfectBut : correctBut;
 
   let explanation = '';
 
   if (!hasPerfect && !hasMisplaced)
-    explanation = 'Nothing.';
+    explanation = 'Nada.';
   else if (decoded.perfectIndexes.length === 5)
-    explanation = 'Won!';
+    explanation = 'Ganhou!';
   else if (decoded.misplacedIndexes.length === 5)
-    explanation = chopAggression >= 1 ? 'all in the wrong order.' : 'all the correct letters but in the wrong order.';
+    explanation = chopAggression >= 1 ? 'tudo na ordem errada.' : 'todas as letras corretas, mas na ordem errada.';
   else if (hasPerfect && hasMisplaced)
     explanation = `${perfect}${misplaced}.`
   else if (hasMisplaced)
@@ -57,22 +57,22 @@ const describeLine = (line, num, chopAggression) => {
   else
     explanation = `${perfect}.`
 
-  const prefix = chopAggression >= 5 ? `${num}.` : `Line ${num}:`;
+  const prefix = chopAggression >= 5 ? `${num}.` : `Linha ${num}:`;
 
   const result = `${prefix} ${explanation}\n`
 
   if (chopAggression >= 4)
-    return result.replaceAll(' and ', ' & ');
+    return result.replaceAll(' e ', ' & ');
 
   return result;
 }
 
 const ord = (i) => {
   switch (i) {
-    case 1: return '1st';
-    case 2: return '2nd';
-    case 3: return '3rd';
-    default: return `${i}th`
+    case 1: return '1ª';
+    case 2: return '2ª';
+    case 3: return '3ª';
+    default: return `${i}ª`
   }
 }
 
@@ -180,9 +180,9 @@ if (document.cookie === 'include-emoji=true') {
 includeEmoji.addEventListener('change', () => {
   if (includeEmoji.checked) {
     alert(
-      'Emojis are beautiful, but can be frustrating for folks who use screen readers and other accessibility tools.' +
+      'Os emojis são lindos, mas podem ser frustrantes para quem usa leitores de tela e outras ferramentas de acessibilidade.' +
       '\n\n' +
-      'Please consider your audience before tweeting. ❤️'
+      'Por favor, considere seu público antes de twittar. ❤️'
     );
   }
 
