@@ -1,0 +1,27 @@
+{
+    "root": {
+        "title": "wa11y.co: Wordle Accessibility",
+        "meta-description": "Generates descriptive text for Wordle endgames"
+    },
+    "header": {
+        "title": "Wordle Accessibility",
+        "description": "At the end of your <a href=\"https://www.powerlanguage.co.uk/wordle/\">Wordle</a>\n        game, click \"Share\" to copy your result then paste it below to generate\n        descriptive text.\",",
+        "input-result": {
+            "title": "Your Wordle result",
+            "placeholder": "Paste your game result here"
+        },
+        "input-output": {
+            "title": "Shareable",
+            "emoji-label": "Include emoji"
+        },
+        "game": {
+            "url": "https://www.powerlanguage.co.uk/wordle/",
+            "name": "Wordle",
+            "author": {
+                "url": "https://www.powerlanguage.co.uk/",
+                "name": "Josh Wardle",
+                "twitter": "powerlanguish"
+            }
+        }
+    }
+}
