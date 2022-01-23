@@ -1,0 +1,27 @@
+{
+    "root": {
+        "title": "Termo acessível",
+        "meta-description": "Gera texto alternativo para jogos como Wordle e Termo"
+    },
+    "header": {
+        "title": "Termo acessível",
+        "description": "No final do seu<a href=\"https://term.ooo/\">Termo</a>\n        jogo, clica \"Compartilhar\" para copiar o seu resultado e depois cole-o abaixo para gerar um texto descritivo",
+        "input-result": {
+            "title": "Seu resultado no term.ooo",
+            "placeholder": "Cole seu resultado do seu jogo aqui"
+        },
+        "input-output": {
+            "title": "Compartilhe",
+            "emoji-label": "Incluir emoji"
+        },
+        "game": {
+            "url": "https://term.ooo/",
+            "name": "Termo",
+            "author": {
+                "url": "https://term.ooo/",
+                "name": "Fernando Serboncini",
+                "twitter": "fserb"
+            }
+        }
+    }
+}
